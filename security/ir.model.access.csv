@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_sign_sign_user","sign.sign.user","model_sign_sign","base.group_user",1,0,0,0
+"access_sign_signcategory_user","sign.category.user","model_sign_category","base.group_user",1,0,0,0

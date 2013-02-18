@@ -1,0 +1,142 @@
+<openerp>
+<data>
+  <!--
+  ======================
+  Categories
+  ======================
+  -->
+  <record model="ir.ui.view" id="view_sign_category_form">
+    <field name="name">sign.category.form</field>
+    <field name="model">sign.category</field>
+    <field name="arch" type="xml">
+      <form string="Sign categories">
+        <field name="name" select="1"/>
+        <field name="active" select="1" />
+        <field name="parent_id"/>
+      </form>
+    </field>
+  </record>
+  <record model="ir.ui.view" id="view_sign_category_list">
+    <field name="name">sign.category.list</field>
+    <field name="model">sign.category</field>
+    <field name="priority" eval="6"/>
+    <field name="arch" type="xml">
+      <tree string="Sign categories">
+        <field name="complete_name"/>
+      </tree>
+    </field>
+  </record>
+  <record model="ir.ui.view" id="view_sign_category_tree">
+    <field name="name">sign.category.tree</field>
+    <field name="model">sign.category</field>
+    <field name="field_parent">child_ids</field>
+    <field name="arch" type="xml">
+      <tree string="Sign Categories">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+  <record model="ir.actions.act_window" id="action_sign_category">
+    <field name="name">Sign categories</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">sign.category</field>
+    <field name="view_type">tree</field>
+    <field name="view_id" ref="view_sign_category_tree"/>
+    <field name="domain">[('parent_id','=',False)]</field>
+  </record>
+
+  <record model="ir.actions.act_window" id="action_sign_by_category">
+    <field name="res_model">sign.sign</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('category_id','child_of', [active_id])]</field>
+  </record>
+  <record model="ir.values" id="ir_action_sign_by_category">
+    <field name="key2" eval="'tree_but_open'"/>
+    <field name="model" eval="'sign.category'"/>
+    <field name="name">Open signs</field>
+    <field name="value" eval="'ir.actions.act_window,%d'%action_sign_by_category"/>
+  </record>
+
+  <record model="ir.actions.act_window" id="action_sign_category_form">
+    <field name="name">Sign categories</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">sign.category</field>
+    <field name="view_type">form</field>
+  </record>
+  
+  <!--
+  ======================
+  Signs
+  ======================
+  -->
+  <record model="ir.actions.act_window" id="action_sign_form">
+    <field name="name">Signs</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">sign.sign</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  
+  <!-- Views referenced by the above actions -->
+  <record model="ir.ui.view" id="view_sign_form">
+    <field name="name">sign.form</field>
+    <field name="model">sign.sign</field>
+    <field name="arch" type="xml">
+        <form string="Sign">
+          <group col="2" colspan="2">
+            <field name="name"/>
+            <field name="code"/>
+            <field name="type" select="1" />
+            <field name="regulated"/>
+            <field name="active"/>
+          </group>          
+          <group col="2" colspan="2" string="Image">
+            <field colspan="4" name="image" nolabel="1" img_height="160" img_width="160" widget="image"/>
+          </group>
+          <group string="Notes &amp; Categories" col="6" colspan="4" expand="1">
+            <field name="notes" nolabel="1"/>
+            <field name="category_id" nolabel="1"/>
+          </group>
+        </form>
+    </field>
+  </record>
+  <record model="ir.ui.view" id="view_sign_tree">
+    <field name="name">sign.tree</field>
+    <field name="model">sign.sign</field>
+    <field name="arch" type="xml">
+      <tree string="Signs">
+        <field name="code" />
+        <field name="name" />
+	<field name="type" />
+      </tree>
+    </field>
+  </record>
+
+  <!-- Search definition -->
+  <record id="sign_search_form_view" model="ir.ui.view">
+    <field name="name">sign.search.form</field>
+    <field name="model">sign.sign</field>
+    <field name="arch" type="xml">
+      <search string="Sign">
+        <field name="name" string="Sign" filter_domain="['|',('name','ilike',self),('code','ilike',self)]"/>
+        <separator/>
+        <field name="category_id"/>
+        <group  expand='0' string='Group by...'>
+          <filter string='Type' icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'type'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <!-- Menu structure -->
+  <!-- Temporary location of the menu below stock, but this introduces dependency -->
+  <menuitem name="Signs" id="menu_config_signs" parent="stock.menu_stock_configuration" />
+  <menuitem name="Edit sign Categories" parent="menu_config_signs" action="action_sign_category_form" id="menu_sign_category_form"/>
+  <menuitem name="Signs by Category" parent="menu_config_signs" action="action_sign_category" id="menu_sign_category_main"/>
+  <menuitem name="Categories" parent="menu_config_signs" id="menu_config_signs_categories"/>
+  <menuitem name="Category's Structure" parent="menu_config_signs_categories" action="action_sign_category" id="menu_sign_category"/>
+  <menuitem name="Signs" id="menu_sign"  parent="menu_config_signs" action="action_sign_form"/>
+
+</data>
+</openerp>
+
