@@ -2,7 +2,7 @@
 <data>
   <!--
   ======================
-  Categories
+  Categories, looks like
   ======================
   -->
   <record model="ir.ui.view" id="view_sign_category_form">
@@ -82,24 +82,51 @@
     <field name="name">sign.form</field>
     <field name="model">sign.sign</field>
     <field name="arch" type="xml">
-        <form string="Sign">
-          <group col="2" colspan="2">
-            <field name="name"/>
-            <field name="code"/>
-            <field name="type" select="1" />
-            <field name="regulated"/>
-            <field name="active"/>
-          </group>          
-          <group col="2" colspan="2" string="Image">
-            <field colspan="4" name="image" nolabel="1" img_height="160" img_width="160" widget="image"/>
-          </group>
-          <group string="Notes &amp; Categories" col="6" colspan="4" expand="1">
-            <field name="notes" nolabel="1"/>
-            <field name="category_id" nolabel="1"/>
-          </group>
+        <form string="Sign" version="7.0">
+	  <sheet>
+	    <group>
+	      <group >
+		<group colspan="2">
+		  <div class="oe_edit_only">
+		    <label for="name" string="Sign Name"/>
+		  </div>
+		</group>
+		<group colspan="2">
+		  <h1><field name="name" nolabel="1"/></h1>
+		</group>
+		<group>
+		  <field name="code"/>
+		  <field name="type" select="1" />
+		  <field name="regulated"/>
+		  <field name="reference" attrs="{'invisible':[('regulated','=',False)]}"/>
+		  <field name="active"/>
+		</group>
+	      </group>
+	      <group string="Pictogram Rendering" >
+		<field name="image" widget="image" img_height="160"
+		       nolabel="1" />
+		<group col="1">
+		  <label for="default_rendering" string="Default rendering"/>
+		  <field name="default_rendering" nolabel="1"/>
+		</group>
+	      </group>
+	    </group>
+    
+	    <group>
+	      <notebook>
+		<page string="Information">
+	    	  <field name="notes"/>
+		</page>
+		<page string="Categories">
+	    	  <field name="category_id"/>
+		</page>
+	      </notebook>
+	    </group>
+	  </sheet>
         </form>
     </field>
   </record>
+  
   <record model="ir.ui.view" id="view_sign_tree">
     <field name="name">sign.tree</field>
     <field name="model">sign.sign</field>
@@ -130,12 +157,15 @@
 
   <!-- Menu structure -->
   <!-- Temporary location of the menu below stock, but this introduces dependency -->
-  <menuitem name="Signs" id="menu_config_signs" parent="stock.menu_stock_configuration" />
-  <menuitem name="Edit sign Categories" parent="menu_config_signs" action="action_sign_category_form" id="menu_sign_category_form"/>
-  <menuitem name="Signs by Category" parent="menu_config_signs" action="action_sign_category" id="menu_sign_category_main"/>
-  <menuitem name="Categories" parent="menu_config_signs" id="menu_config_signs_categories"/>
-  <menuitem name="Category's Structure" parent="menu_config_signs_categories" action="action_sign_category" id="menu_sign_category"/>
-  <menuitem name="Signs" id="menu_sign"  parent="menu_config_signs" action="action_sign_form"/>
+  <menuitem name="Signs" id="menu_config_signs"   parent="stock.menu_stock_configuration" />
+  <menuitem name="Signs" id="menu_content_signs"  parent="stock.menu_stock_root" sequence="7"/>
+  
+  <!-- Configuration menu items -->
+  <menuitem name="Sign Categories"   parent="menu_config_signs" action="action_sign_category_form" id="menu_sign_category_form"/>
+
+  <!-- Content menu items -->
+  <menuitem name="Signs by Category" parent="menu_content_signs" action="action_sign_category" id="menu_sign_category_main"/>
+  <menuitem name="Signs" id="menu_sign"  parent="menu_content_signs" action="action_sign_form"/>
 
 </data>
 </openerp>
