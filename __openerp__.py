@@ -18,11 +18,15 @@ Typical usage:
 --------------
 * legislative labeling products
 * safety and warnings signs for substances
+* trafic signs for planning
 
 Envisioned functionality:
 -------------------------
 * dynamic image generation
 * image manipulation depending on object linkage
+* proper linking to legislative reference documents
+    
+All relevant documentation is included in the doc directory of this module.
     """,
     "depends"    : ["base","product"],
     "init_xml"   : [],                      

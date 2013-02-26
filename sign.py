@@ -92,7 +92,7 @@ class sign_sign(osv.osv):
     'default_rendering': fields.selection( [
       ('asis',  "Unchanged from source"),
       ('bw'  , "In black and white")], 'Default rendering', required=True, help="How should the sign be rendered by default?"),
-    'regulated'  : fields.boolean('Regulated', required=True, help="Is this sign defined in regulation? (For example: EC/1272/2008)"),
+    'regulated'  : fields.boolean('Regulated', help="Is this sign defined in regulation? (For example: EC/1272/2008)"),
     'reference'  : fields.char('Reference', help="Given a legislated sign, where is it defined. Typically a standard or law identifcation."),
     'active' : fields.boolean('Active'),
     'notes': fields.text('Notes'),
