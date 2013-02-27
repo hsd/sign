@@ -32,7 +32,9 @@ All relevant documentation is included in the doc directory of this module.
     "init_xml"   : [],                      
     "update_xml" : [
         "sign_view.xml",
-        "security/ir.model.access.csv"
+        "security/ir.model.access.csv",
+        "data/sign.sign-wms.csv",
+        "data/sign.sign-ghs.csv"
     ],
     "images" : [],
     "qweb" : [],
