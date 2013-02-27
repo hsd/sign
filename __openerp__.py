@@ -28,11 +28,12 @@ Envisioned functionality:
     
 All relevant documentation is included in the doc directory of this module.
     """,
-    "depends"    : ["base","product"],
+    "depends"    : ["base","product","stock"],
     "init_xml"   : [],                      
     "update_xml" : [
         "sign_view.xml",
         "security/ir.model.access.csv",
+        "data/sign.category.csv",
         "data/sign.sign-wms.csv",
         "data/sign.sign-ghs.csv"
     ],

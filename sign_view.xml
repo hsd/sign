@@ -144,7 +144,6 @@
   <record model="ir.ui.view" id="view_sign_kanban">
     <field name="name">sign.kanban</field>
     <field name="model">sign.sign</field>
-    <field name="type">kanban</field>
     <field name="arch" type="xml">
       <kanban>
         <field name="type"/>
