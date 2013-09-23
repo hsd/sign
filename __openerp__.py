@@ -28,7 +28,7 @@ Envisioned functionality:
 
 All relevant documentation is included in the doc directory of this module.
     """,
-    "depends"    : ["base","web", "product","stock"],
+    "depends"    : ["base","listview_images", "product","stock"],
     "init_xml"   : [],
     "update_xml" : [
         "sign_view.xml",
@@ -39,9 +39,7 @@ All relevant documentation is included in the doc directory of this module.
     ],
     "images" : [],
     "qweb" : [],
-    "js" : [
-        'static/src/js/view_list.js'
-    ],
+    "js" : [],
     "css" : [],
     "active"     : False,
     "installable": True
