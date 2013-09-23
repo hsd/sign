@@ -1,5 +1,5 @@
-# (c) Copyright 2008-today Marcel van der Boom. All Rights Reserved. 
-# 
+# (c) Copyright 2008-today Marcel van der Boom. All Rights Reserved.
+#
 # Meta information about the signs module
 {
     "name"       : "Signs",
@@ -10,10 +10,10 @@
     "url"        : "http://www.hsdev.com",
     "sequence"   : 2,
     'description': """
-Electronic signs, to be linked to other objects 
+Electronic signs, to be linked to other objects
 ===============================================
 Create a model for electronic signs to be attached to other objects.
-    
+
 Typical usage:
 --------------
 * legislative labeling products
@@ -25,11 +25,11 @@ Envisioned functionality:
 * dynamic image generation
 * image manipulation depending on object linkage
 * proper linking to legislative reference documents
-    
+
 All relevant documentation is included in the doc directory of this module.
     """,
-    "depends"    : ["base","product","stock"],
-    "init_xml"   : [],                      
+    "depends"    : ["base","web", "product","stock"],
+    "init_xml"   : [],
     "update_xml" : [
         "sign_view.xml",
         "security/ir.model.access.csv",
@@ -39,7 +39,9 @@ All relevant documentation is included in the doc directory of this module.
     ],
     "images" : [],
     "qweb" : [],
-    "js" : [],
+    "js" : [
+        'static/src/js/view_list.js'
+    ],
     "css" : [],
     "active"     : False,
     "installable": True
