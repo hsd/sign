@@ -1,17 +1,17 @@
 # Signs are graphical represenation of things like safety and traffic signs.
 # Copyright (C) 2013 Marcel van der Boom <marcel@hsdev.com> HS-Development BV
-# 
-# 
+#
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 from osv import osv, fields
@@ -35,12 +35,12 @@ class sign_category(osv.osv):
         name = record['parent_id'][1]+' / '+name
       res.append((record['id'], name))
     return res
-    
+
   # This is the functional field
   def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, unknow_dict):
     res = self.name_get(cr, uid, ids)
     return dict(res)
-    
+
   def _check_recursion(self, cr, uid, ids):
     level = 100
     while len(ids):
@@ -49,7 +49,7 @@ class sign_category(osv.osv):
       if not level:
         return False
       level -= 1
-    return True    
+    return True
   _name        = 'sign.category'
   _description = 'Sign Categories'
   _columns = {
@@ -79,16 +79,16 @@ class sign_sign(osv.osv):
     'type'     : fields.selection( [
             ('fire', "Fire fighting"),
             ('informational','Informational'),
-            ('mandatory','Mandatory'), 
-            ('warning','Warning'), 
-            ('prohibition','Prohibition'), 
+            ('mandatory','Mandatory'),
+            ('warning','Warning'),
+            ('prohibition','Prohibition'),
             ('safe', 'Safety routing'),
             ('transport', 'Transport'),
             ('rescue', 'Rescue'),
             ('other', 'Other/unspecified')
         ], 'Sign Type', translate=True, required=True, help="Type designation in ISO/DIN terminology"),
     'category_id': fields.many2many('sign.category', 'sign_category_rel', 'sign_id', 'category_id', 'Categories'),
-    'image'    : fields.binary('Image', help="The default rendering of the pictgram."),
+    'image'    : fields.binary('Image', help="The default rendering of the pictogram."),
     'default_rendering': fields.selection( [
       ('asis',  "Unchanged from source"),
       ('bw'  , "In black and white")], 'Default rendering', required=True, help="How should the sign be rendered by default?"),
@@ -96,10 +96,10 @@ class sign_sign(osv.osv):
     'reference'  : fields.char('Reference', help="Given a legislated sign, where is it defined. Typically a standard or law identifcation."),
     'active' : fields.boolean('Active'),
     'notes': fields.text('Notes'),
-    
+
   }
   _defaults = {
-    # This default is a 300x300 png image transparaent, decreased in size by pngcrush 
+    # This default is a 300x300 png image transparaent, decreased in size by pngcrush
     'image' : lambda *a: 'iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQMAAABDsxw2AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRS\nTlMAQObYZgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAiSURBVHja7cEx\nAQAAAMKg9U9tCj+gAAAAAAAAAAAAAAB4GS20AAEBlVMEAAAAAElFTkSuQmCC\n',
     #'image' : lambda *a: 'iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABlBMVEX///8AAABVwtN+AAAAAXRS\nTlMAQObYZgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABtSURBVHja7cEB\nAQAAAIIg/69uSEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbmDLAAEQxsW9AAAAAElF\nTkSuQmCC\n'
     'regulated' : lambda *a: True,
