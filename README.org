@@ -1,8 +1,18 @@
 #-*- mode:org -*-
-* What does this module do?
+* OpenObject sign module
+  This repository contains a module for OpenObject/OpenERP 7.x series
+  which allows registration of (legislative) signs. The signs can then
+  be used in reports, such as labels and material safety data sheets
+  (MSDS).
+
   This module implements signs and pictorgram handling. Typical usage
   is to link other objects, such as products to this module and refer
   to the set of signs stored in the database.
+
+  Signs can be assigned to categories, like with partners in
+  OpenERP. Each sign is also given a type, referring to its intent
+  (prohibition, mandatory, danger etc.)
+
 * Directories
 
   - doc :: documentation
