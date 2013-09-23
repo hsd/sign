@@ -3,3 +3,8 @@
   This module implements signs and pictorgram handling. Typical usage
   is to link other objects, such as products to this module and refer
   to the set of signs stored in the database.
+* Directories
+
+  - doc :: documentation
+  - data :: includes datasets for the module (e.g. GHS/CLP pictograms,
+            WMS signs)
