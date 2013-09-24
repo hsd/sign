@@ -8,7 +8,8 @@
     "category"   : "Generic",
     "website"    : "http://www.hsdev.com",
     "url"        : "http://www.hsdev.com",
-    "sequence"   : 2,
+    'sequence'   : 2,
+    'summary'    : "Signs / Images / Labels related to legislation",
     'description': """
 Electronic signs, to be linked to other objects
 ===============================================
