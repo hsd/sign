@@ -1,0 +1,326 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sign
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-24 12:03+0000\n"
+"PO-Revision-Date: 2018-05-24 14:15+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.7\n"
+"Last-Translator: Marcel van der Boom <marcel@hsdev.com>\n"
+"Language: nl\n"
+
+#. module: sign
+#: model:ir.model,name:sign.model_sign_type
+msgid " Sign types"
+msgstr " Symbool typen"
+
+#. module: sign
+#: field:sign.sign,active:0 field:sign.type,active:0
+msgid "Active"
+msgstr "Actief"
+
+#. module: sign
+#: model:ir.ui.menu,name:sign.menu_sign_category_form
+msgid "Categories"
+msgstr "Categoriën"
+
+#. module: sign
+#: field:sign.sign,name:0
+msgid "Code"
+msgstr "Code"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS05 model:sign.sign,desc:sign.sign_WMS_C
+msgid "Corrosive"
+msgstr "Corrosief"
+
+#. module: sign
+#: field:product.signinfo,create_uid:0 field:sign.sign,create_uid:0
+#: field:sign.type,create_uid:0
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: sign
+#: field:product.signinfo,create_date:0 field:sign.sign,create_date:0
+#: field:sign.type,create_date:0
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS09 model:sign.sign,desc:sign.sign_WMS_N
+msgid "Dangerous for the environment"
+msgstr "Gevaarlijk voor het milieu"
+
+#. module: sign
+#: field:sign.sign,default_rendering:0
+msgid "Default rendering"
+msgstr "Standaardweergave"
+
+#. module: sign
+#: field:product.signinfo,desc:0 field:sign.sign,desc:0
+msgid "Desc"
+msgstr "Beschrijving"
+
+#. module: sign
+#: field:sign.type,description:0
+msgid "Description"
+msgstr "Beschrijving"
+
+#. module: sign
+#: field:product.signinfo,display_name:0 field:sign.sign,display_name:0
+#: field:sign.type,display_name:0
+msgid "Display Name"
+msgstr "Weergave naam"
+
+#. module: sign
+#: sql_constraint:sign.sign:0
+msgid "Each code for a sign must be unique."
+msgstr "Elke code voor een symbool moet uniek zijn."
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS07
+msgid "Exclamation mark"
+msgstr "Uitroepteken"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS01 model:sign.sign,desc:sign.sign_WMS_E
+msgid "Explosive"
+msgstr "Explosief"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_WMS_F+
+msgid "Extremely flammable"
+msgstr "Zeer licht ontvlambaar"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS02
+msgid "Flammable"
+msgstr "Ontvlambaar"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS04
+msgid "Gas under pressure"
+msgstr "Gas onder druk"
+
+#. module: sign
+#: help:sign.sign,reference:0
+msgid ""
+"Given a legislated sign, where is it defined. Typically a standard or law "
+"identifcation."
+msgstr ""
+"Gegeven een gereguleerd symbool, waar wordt dit gedefinieerd. Normaliter "
+"een referentie naar een norm."
+
+#. module: sign
+#: view:sign.sign:sign.sign_search_form_view
+msgid "Group by..."
+msgstr "Groupeer op..."
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_WMS_XN
+msgid "Harmful"
+msgstr "Schadelijk"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS08
+msgid "Health hazard"
+msgstr "Gezondheidsgevaar"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_WMS_F
+msgid "Highly flammable"
+msgstr "Licht ontvlambaar"
+
+#. module: sign
+#: help:sign.sign,default_rendering:0
+msgid "How should the sign be rendered by default?"
+msgstr "Hoe moet het symbool standaard worden weergegeven?"
+
+#. module: sign
+#: field:product.signinfo,id:0 field:sign.sign,id:0 field:sign.type,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sign
+#: field:product.signinfo,image:0 field:sign.sign,image:0
+msgid "Image"
+msgstr "Afbeelding"
+
+#. module: sign
+#: selection:sign.sign,default_rendering:0
+msgid "In black and white"
+msgstr "In zwart/wit"
+
+#. module: sign
+#: view:sign.sign:sign.view_sign_form
+msgid "Information"
+msgstr "Informatie"
+
+#. module: sign
+#: field:product.signinfo,product_code:0
+msgid "Internal Reference"
+msgstr "Interne referentie"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_WMS_XI
+msgid "Irritant"
+msgstr "Irriterend"
+
+#. module: sign
+#: help:sign.sign,regulated:0
+msgid "Is this sign defined in regulation? (For example: EC/1272/2008)"
+msgstr ""
+"Is dit symbool gedefinieerd in wet- en regelgeving? (bijvoorbeeld "
+"EC/1272/2008)"
+
+#. module: sign
+#: field:product.signinfo,__last_update:0 field:sign.sign,__last_update:0
+#: field:sign.type,__last_update:0
+msgid "Last Modified on"
+msgstr "Laatste wijziging op"
+
+#. module: sign
+#: field:product.signinfo,write_uid:0 field:sign.sign,write_uid:0
+#: field:sign.type,write_uid:0
+msgid "Last Updated by"
+msgstr "Laatste wijziging door"
+
+#. module: sign
+#: field:product.signinfo,write_date:0 field:sign.sign,write_date:0
+#: field:sign.type,write_date:0
+msgid "Last Updated on"
+msgstr "Laatste wijziging op"
+
+#. module: sign
+#: field:product.signinfo,type:0 field:sign.type,name:0
+msgid "Name"
+msgstr "Naam"
+
+#. module: sign
+#: sql_constraint:sign.type:0
+msgid "Names for sign types must be unique"
+msgstr "Namen van symbool-typen moeten uniek zijn."
+
+#. module: sign
+#: field:sign.sign,notes:0
+msgid "Notes"
+msgstr "Notities"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS03 model:sign.sign,desc:sign.sign_WMS_O
+msgid "Oxidizing"
+msgstr "Oxiderend"
+
+#. module: sign
+#: field:product.signinfo,product_tmpl_id:0
+msgid "Product"
+msgstr "Produkt"
+
+#. module: sign
+#: model:ir.model,name:sign.model_product_template
+msgid "Product Template"
+msgstr "Product sjabloon"
+
+#. module: sign
+#: field:sign.sign,reference:0
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: sign
+#: field:sign.sign,regulated:0 field:sign.type,regulated:0
+msgid "Regulated"
+msgstr "Gereguleerd"
+
+#. module: sign
+#: field:product.signinfo,sequence:0
+msgid "Sequence"
+msgstr "Volgorde"
+
+#. module: sign
+#: field:product.signinfo,sign_id:0 view:sign.sign:sign.sign_search_form_view
+#: view:sign.sign:sign.view_sign_form
+msgid "Sign"
+msgstr "Symbool"
+
+#. module: sign
+#: model:ir.model,name:sign.model_sign_category
+#: view:sign.category:sign.view_sign_category_tree
+msgid "Sign Categories"
+msgstr "Symbool categoriën"
+
+#. module: sign
+#: view:sign.sign:sign.view_sign_form
+msgid "Sign Name"
+msgstr "Symbool naam"
+
+#. module: sign
+#: model:ir.actions.act_window,name:sign.action_sign_category
+#: model:ir.actions.act_window,name:sign.action_sign_category_form
+#: view:sign.category:sign.view_sign_category_form
+msgid "Sign categories"
+msgstr "Symbool categoriën"
+
+#. module: sign
+#: model:ir.model,name:sign.model_product_signinfo
+msgid "Sign information for products"
+msgstr "Symbool informatie voor producten"
+
+#. module: sign
+#: model:ir.actions.act_window,name:sign.action_signtype_form
+#: view:sign.type:sign.sign_type_form_view
+#: view:sign.type:sign.sign_type_tree_view
+msgid "Sign types"
+msgstr "Symbool typen"
+
+#. module: sign
+#: model:ir.actions.act_window,name:sign.action_sign_form
+#: model:ir.model,name:sign.model_sign_sign
+#: model:ir.ui.menu,name:sign.menu_config_signs
+#: model:ir.ui.menu,name:sign.menu_content_signs
+#: view:product.template:sign.product_signs_form
+#: field:product.template,sign_ids:0 view:sign.sign:sign.view_sign_tree
+msgid "Signs"
+msgstr "Symbolen"
+
+#. module: sign
+#: help:product.signinfo,image:0 help:sign.sign,image:0
+msgid "The default rendering of the pictogram."
+msgstr "Standaardweergave van het symbool."
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_GHS06 model:sign.sign,desc:sign.sign_WMS_T
+msgid "Toxic"
+msgstr "Vergiftig"
+
+#. module: sign
+#: view:sign.sign:sign.sign_search_form_view field:sign.sign,type_id:0
+msgid "Type"
+msgstr "Type"
+
+#. module: sign
+#: help:sign.sign,type_id:0
+msgid "Type designation is ISO/DIN terminology"
+msgstr "Type-aanduiding volgens ISO/DIN terminologie"
+
+#. module: sign
+#: model:ir.ui.menu,name:sign.menu_config_sign_types
+msgid "Types"
+msgstr "Typen"
+
+#. module: sign
+#: selection:sign.sign,default_rendering:0
+msgid "Unchanged from source"
+msgstr "Zoals bronformaat"
+
+#. module: sign
+#: model:sign.sign,desc:sign.sign_WMS_T+
+msgid "Very toxic"
+msgstr "Zeer vergiftig"

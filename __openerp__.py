@@ -3,12 +3,11 @@
 # Meta information about the signs module
 {
     "name"       : "Signs",
-    "version"    : "1.0",
+    "version"    : "2.0",
     "author"     : "HSD",
     "category"   : "Generic",
-    "website"    : "http://www.hsdev.com",
-    "url"        : "http://www.hsdev.com",
-    'sequence'   : 2,
+    "website"    : "https://www.hsdev.com",
+    "url"        : "https://www.hsdev.com",
     'summary'    : "Signs / Images / Labels related to legislation",
     'description': """
 Electronic signs, to be linked to other objects
@@ -21,27 +20,28 @@ Typical usage:
 * safety and warnings signs for substances
 * trafic signs for planning
 
+Signs can be linked to other objects. A link between products and signs
+is included in this modules as well as the standard safety signs for GHS/REACH.
+
 Envisioned functionality:
 -------------------------
-* dynamic image generation
+* dynamic image generation (resize, black/white for labelling etc.)
 * image manipulation depending on object linkage
-* proper linking to legislative reference documents
+* proper linking to legislative reference documents (link to what?)
 
-All relevant documentation is included in the doc directory of this module.
+
     """,
-    "depends"    : ["base","listview_images", "product","stock"],
-    "init_xml"   : [],
-    "update_xml" : [
-        "sign_view.xml",
+    "depends"    : [
+        "base","product","stock",
+        "web_tree_image"
+    ],
+    "data" : [
+        "views/sign.xml",
+        "views/sign_type.xml",
+        "views/product.xml",
         "security/ir.model.access.csv",
-        "data/sign.category.csv",
+        "data/sign.type.csv",
         "data/sign.sign-wms.csv",
         "data/sign.sign-ghs.csv"
     ],
-    "images" : [],
-    "qweb" : [],
-    "js" : [],
-    "css" : [],
-    "active"     : False,
-    "installable": True
 }

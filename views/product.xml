@@ -1,0 +1,27 @@
+<openerp>
+  <data>
+    <!-- Bring in sign field in its own tab on the product form -->
+    <record model="ir.ui.view" id="product_signs_form">
+      <field name="name">product.template.signs.form</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id"
+	     ref="product.product_template_form_view"/>
+      <field name="priority">15</field>
+      <field name="arch" type="xml">
+	<xpath expr="//page[@string='Inventory']" position="before">
+	  <page string="Signs">
+            <field name="sign_ids" nolabel="1">
+	      <tree editable="bottom">
+		<field name="sequence" widget="handle"/>
+
+		<field name="sign_id"  options="{'no_create': True}"/>
+		<field name="desc" readonly="1" />
+		<field name="image" widget="image" height="30px" readonly="1"/>
+	      </tree>
+	    </field>
+	  </page>
+	</xpath>
+      </field>
+    </record>
+  </data>
+</openerp>

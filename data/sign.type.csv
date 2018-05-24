@@ -1,0 +1,10 @@
+id,name,description
+sign_fire,fire,Fire fighting signs
+sign_info,informational,Informational signs.
+sign_mand,mandatory,Signs telling something is mandatory
+sign_warn,warning,Sigs warning for a dangerous object/situation
+sign_proh,prohibition,Signs showing that something is prohibited
+sign_safe,safe,Signs indicating a safe route/situation
+sign_tran,transport,Transport related signs
+sign_resc,rescue,Rescue signs
+sign_othe,other,Other/unspecified

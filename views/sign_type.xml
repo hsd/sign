@@ -1,0 +1,47 @@
+<openerp>
+  <data>
+    <!-- Sign types -->
+    <!-- Menu item -->
+    <record model="ir.actions.act_window" id="action_signtype_form">
+      <field name="name">Sign types</field>
+      <field name="res_model">sign.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- List definition -->
+    <record model="ir.ui.view" id="sign_type_tree_view">
+      <field name="name">sign.type.tree</field>
+      <field name="model">sign.type</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+	<tree string="Sign types">
+          <field name="regulated" />
+          <field name="name" />
+          <field name="description" />
+	</tree>
+      </field>
+    </record>
+
+    <!-- Form definition -->
+    <record model="ir.ui.view" id="sign_type_form_view">
+      <field name="name">sign.type.form</field>
+      <field name="model">sign.type</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Sign types">
+	  <group>
+	    <field name="name" />
+            <field name="regulated" />
+	     <field name="active"/>
+	  </group>
+	  <group>
+            <field name="description"  colspan="4"/>
+	  </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Configuration menu items -->
+    <menuitem name="Types"   parent="menu_config_signs" action="action_signtype_form" id="menu_config_sign_types"/>
+  </data>
+</openerp>
